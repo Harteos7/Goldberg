@@ -18,21 +18,21 @@ public class GestionBilles : MonoBehaviour
         // 1pre Bille
         if (bille1.activeSelf && Bille == 1 && objet_start.activeSelf) {
             bille1.SetActive(false);
-        } else if (Bille == 1) {
+        } else if (Bille == 1 && objet_start.activeSelf) {
             bille1.SetActive(true);
         }
 
         // 2eme Bille
         if (bille2.activeSelf&& Bille == 2 && objet_start.activeSelf) {
             bille2.SetActive(false);
-        } else if (Bille == 2) {
+        } else if (Bille == 2 && objet_start.activeSelf) {
             bille2.SetActive(true);
         }
 
         // 3eme bille
         if (bille3.activeSelf && Bille == 3 && objet_start.activeSelf) {
             bille3.SetActive(false);
-        } else if (Bille == 3) {
+        } else if (Bille == 3 && objet_start.activeSelf) {
             bille3.SetActive(true);
         }
 

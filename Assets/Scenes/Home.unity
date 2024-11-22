@@ -718,7 +718,10 @@ MonoBehaviour:
   bille3: {fileID: 3518817557527101832}
   Objet_start: {fileID: 601435426}
   distance: 10
-  offset: {x: 0, y: 2, z: -10}
+  start_position: {x: 0, y: 10, z: -15}
+  smoothSpeed: 20000
+  rotationSmoothSpeed: 5
+  positionThreshold: 0.01
 --- !u!1 &601435426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5712406456208849143, guid: 2c579fc3e3f1f764f9e2038717ee1a60, type: 3}
@@ -1834,27 +1837,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 71165763808323660, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 71165763808323660, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 140
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 410459493836706962, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 410459493836706962, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 140
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 882302798360880986, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 882302798360880986, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 140
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1512128699619140024, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1922,11 +1925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102801626067490722, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_text
-      value: bille 2
+      value: Bille verte
       objectReference: {fileID: 0}
     - target: {fileID: 2297157256561635712, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_text
-      value: bille 1
+      value: Bille rouge
       objectReference: {fileID: 0}
     - target: {fileID: 3027070555764269948, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_Pivot.x
@@ -2178,15 +2181,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6665654260133552916, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6665654260133552916, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 140
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7371190348143141795, guid: f55bb45d3a6a36642b176ada7bd2febf, type: 3}
       propertyPath: m_text
-      value: bille 3
+      value: Bille bleu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
