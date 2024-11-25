@@ -5,9 +5,8 @@ public class CameraBilles : MonoBehaviour
     [SerializeField] private GameObject bille1;
     [SerializeField] private GameObject bille2;
     [SerializeField] private GameObject bille3;
-    [SerializeField] private GameObject Objet_start;
-    public float distance = 10f; 
-    private Vector3 offset = new Vector3(0, 2, -10);
+    [SerializeField] private GameObject Objet_start; 
+    [SerializeField] private Vector3 offset = new Vector3(0, 2, -20);
     [SerializeField] private Vector3 start_position = new Vector3(0, 10, -15);
     private bool camera_libre = false;
     private GameObject cible; 
