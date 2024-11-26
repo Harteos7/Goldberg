@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 8263640644974986134}
   - component: {fileID: 4568220808157613645}
   m_Layer: 0
-  m_Name: Sol
+  m_Name: Sol_start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,7 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6268462712792448594}
   m_Layer: 0
-  m_Name: Build_home
+  m_Name: Build_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 8276051607832244437}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0, z: 0}
+  m_LocalPosition: {x: -7.5, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

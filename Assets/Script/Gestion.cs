@@ -17,6 +17,9 @@ public class GestionBilles : MonoBehaviour
         rg_bille1 = bille1.GetComponent<Rigidbody>();
         rg_bille2 = bille2.GetComponent<Rigidbody>();
         rg_bille3 = bille3.GetComponent<Rigidbody>();
+        Bouge_Stp(bille1,rg_bille1);
+        Bouge_Stp(bille2,rg_bille2);
+        Bouge_Stp(bille2,rg_bille3);
     }
 
     public void ActiverBilles(int Bille)
@@ -72,14 +75,20 @@ public class GestionBilles : MonoBehaviour
         rg.angularVelocity = Vector3.zero;
     }
 
-    public void Bouge_Stp(GameObject gameObject, Rigidbody rigidbody) {
-        if (rigidbody.linearVelocity.magnitude < 0.0001f && gameObject.activeSelf) {
-            Dont_Move(rigidbody);
-            // Ajouter une force vers l'avant pour la faire rouler
-            Vector3 forwardForce = gameObject.transform.forward * 0.25f; 
-            rigidbody.AddForce(forwardForce, ForceMode.Impulse);
-        }
+public void Bouge_Stp(GameObject gameObject, Rigidbody rigidbody) {
+    if (rigidbody.linearVelocity.magnitude < 0.0001f && gameObject.activeSelf) {
+        Dont_Move(rigidbody);
+
+        // Générer une direction aléatoire
+        Vector3 randomDirection = new Vector3(
+            Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)
+        ).normalized; // Normaliser pour avoir une direction unitaire
+
+        Vector3 randomForce = randomDirection * 0.25f; 
+        rigidbody.AddForce(randomForce, ForceMode.Impulse);
     }
+}
+
 
     void Update() {
         if (!objet_start.activeSelf) {
