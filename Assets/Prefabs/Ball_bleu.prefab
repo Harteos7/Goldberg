@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7088315844328738949}
   - component: {fileID: 6268003143762007225}
   m_Layer: 0
-  m_Name: Ball_3
-  m_TagString: Untagged
+  m_Name: Ball_bleu
+  m_TagString: Bille
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
