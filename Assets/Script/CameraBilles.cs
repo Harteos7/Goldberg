@@ -6,8 +6,7 @@ public class CameraBilles : MonoBehaviour
     [SerializeField] private GameObject bille2;
     [SerializeField] private GameObject bille3;
     [SerializeField] private GameObject Objet_start; 
-    [SerializeField] private Vector3 offset = new Vector3(0, 5, -25);
-    [SerializeField] private Vector3 start_position = new Vector3(0, 10, -15);
+    [SerializeField] private Vector3 offset = new Vector3(0, 10, 15);
     private bool camera_libre = false;
     private GameObject cible; 
     [SerializeField] private float smoothSpeed = 20000f; // Vitesse de déplacement de la caméra
@@ -46,7 +45,7 @@ public class CameraBilles : MonoBehaviour
         else 
         {
             // Un restart : on se replace au début
-            transform.position = start_position;
+            transform.position = offset;
             if (cible != null)
                 SmoothLookAt(cible.transform.position);
         }

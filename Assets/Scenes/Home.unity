@@ -156,8 +156,8 @@ CharacterJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_SwingAxis: {x: 0, y: 0, z: 0}
   m_TwistLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 50
+    damper: 1
   m_LowTwistLimit:
     limit: -91.30131
     bounciness: 0
@@ -296,7 +296,7 @@ Transform:
   m_GameObject: {fileID: 167776208}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: -18.5, z: -74.85}
+  m_LocalPosition: {x: 0, y: -18.5, z: 0}
   m_LocalScale: {x: 0.5, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -535,8 +535,7 @@ MonoBehaviour:
   bille2: {fileID: 3518817557066062660}
   bille3: {fileID: 3518817557527101832}
   Objet_start: {fileID: 601435426}
-  offset: {x: 0, y: 2, z: -20}
-  start_position: {x: 0, y: 10, z: -15}
+  offset: {x: 0, y: 10, z: 15}
   smoothSpeed: 20000
   rotationSmoothSpeed: 10
   positionThreshold: 0.01
@@ -754,7 +753,7 @@ Transform:
   m_GameObject: {fileID: 682674166}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -80}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -892,7 +891,7 @@ Transform:
   m_GameObject: {fileID: 1065637989}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08715578, y: -0, z: -0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: -15, z: -75}
+  m_LocalPosition: {x: 0, y: -15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1734,7 +1733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Build_Start
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6749321964676700945, guid: 11b0234392d54bb4ca3ef37b870ec4d4, type: 3}
+    - {fileID: 4921315586373161637, guid: 11b0234392d54bb4ca3ef37b870ec4d4, type: 3}
+    - {fileID: 8149758288906598885, guid: 11b0234392d54bb4ca3ef37b870ec4d4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1892,6 +1894,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 764382187782100914, guid: f5bccce6abf045b44b0f505666bc5636, type: 3}
+      propertyPath: frequency
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035111197100081382, guid: f5bccce6abf045b44b0f505666bc5636, type: 3}
+      propertyPath: frequency
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4103820416705234166, guid: f5bccce6abf045b44b0f505666bc5636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1932,9 +1942,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7398039879580900224, guid: f5bccce6abf045b44b0f505666bc5636, type: 3}
+      propertyPath: frequency
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8671389799251659910, guid: f5bccce6abf045b44b0f505666bc5636, type: 3}
       propertyPath: m_Name
       value: Obstacle_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024279677809789475, guid: f5bccce6abf045b44b0f505666bc5636, type: 3}
+      propertyPath: frequency
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
