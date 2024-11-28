@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class TriggerHandler : MonoBehaviour
 {
-    public TextMeshProUGUI messageText; // Canvas text
+    public TextMeshProUGUI messageTextCanvas; // Canvas text
     public float messageDuration = 5f;
 
     private void OnTriggerEnter(Collider other)
@@ -24,19 +24,19 @@ public class TriggerHandler : MonoBehaviour
     void ShowMessage(string message)
     {
         // Change le texte
-        if (messageText != null)
+        if (messageTextCanvas != null)
         {
-            messageText.text = message;
-            messageText.gameObject.SetActive(true); // Affiche le texte
+            messageTextCanvas.text = message;
+            messageTextCanvas.gameObject.SetActive(true); // Affiche le texte
             Invoke(nameof(HideMessage), messageDuration); // Cache le texte après un délai
         }
     }
 
     void HideMessage()
     {
-        if (messageText != null)
+        if (messageTextCanvas != null)
         {
-            messageText.gameObject.SetActive(false); // Cache le texte
+            messageTextCanvas.gameObject.SetActive(false); // Cache le texte
         }
     }
 }
