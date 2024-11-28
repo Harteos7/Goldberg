@@ -1,28 +1,42 @@
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Trigger_end : MonoBehaviour
+public class TriggerHandler : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject bille1;
-    public GameObject bille2;
-    public GameObject bille3;
+    public TextMeshProUGUI messageText; // Canvas text
+    public float messageDuration = 5f;
 
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log(other.name + " est arrivée !");
-        if (other.CompareTag("Bille")) {
+        if (other.CompareTag("Bille"))
+        {
+            // Désactive la bille
             other.gameObject.SetActive(false);
+
+            Debug.Log(other.gameObject);
+
+            // Affiche un message sur le Canvas
+            ShowMessage(other.name + " est arrivée !");
+        }
+    }
+
+    void ShowMessage(string message)
+    {
+        // Change le texte
+        if (messageText != null)
+        {
+            messageText.text = message;
+            messageText.gameObject.SetActive(true); // Affiche le texte
+            Invoke(nameof(HideMessage), messageDuration); // Cache le texte après un délai
+        }
+    }
+
+    void HideMessage()
+    {
+        if (messageText != null)
+        {
+            messageText.gameObject.SetActive(false); // Cache le texte
         }
     }
 }
