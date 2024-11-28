@@ -11,13 +11,13 @@ public class CameraBilles : MonoBehaviour
     private bool camera_libre = false;
     private GameObject cible; 
     [SerializeField] private float smoothSpeed = 20000f; // Vitesse de déplacement de la caméra
-    public float rotationSmoothSpeed = 5f;
+    public float rotationSmoothSpeed = 10f;
     public float positionThreshold = 0.01f; 
     private float vitesseDeplacement = 5f;
     private float vitesseScroll = 20f; 
     private float vitesseMin = 5f; 
     private float vitesseMax = 50f;
-    public float sensibiliteSouris = 2f;
+    public float sensibiliteSouris = 5f;
     public float limiteVerticale = 80f;
     private float rotationX = 0f;
     
@@ -64,26 +64,21 @@ public class CameraBilles : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, ciblePosition, Time.deltaTime * smoothSpeed);
             }
 
-            // Orientation lissée de la caméra vers la cible
             SmoothLookAt(cible.transform.position);
         }
     }
 
     void SmoothLookAt(Vector3 targetPosition)
     {
-        // Calcul de la direction cible
         Vector3 direction = targetPosition - transform.position;
 
-        // Rotation actuelle
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-        // Rotation lissée
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
     }
 
     public void RegarderBille(GameObject nouvelleCible)
     {
-        // On choisit la cible
         if (nouvelleCible != null && !Objet_start.activeSelf && cible != nouvelleCible)
         {
             cible = nouvelleCible;
@@ -110,16 +105,15 @@ public class CameraBilles : MonoBehaviour
         float elevation = 0f;
 
         // Monter/descendre (Espace/Ctrl)
-        if (Input.GetKey(KeyCode.Space)) // Monter
+        if (Input.GetKey(KeyCode.Space))
         {
             elevation += 1f;
         }
-        if (Input.GetKey(KeyCode.LeftControl)) // Descendre
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             elevation -= 1f;
         }
 
-        // Appliquer le mouvement
         Vector3 moveDirection = new Vector3(horizontal, elevation, vertical);
         transform.Translate(moveDirection * moveSpeed, Space.Self);
 
@@ -130,15 +124,13 @@ public class CameraBilles : MonoBehaviour
             vitesseDeplacement = Mathf.Clamp(vitesseDeplacement + scroll * vitesseScroll, vitesseMin, vitesseMax);
         }
 
-        // Rotation avec la souris
         if (Input.GetMouseButton(1)) // Bouton droit de la souris maintenu
         {
             float mouseX = Input.GetAxis("Mouse X") * sensibiliteSouris; // Rotation gauche-droite
             float mouseY = Input.GetAxis("Mouse Y") * sensibiliteSouris; // Rotation haut-bas
 
-            // Appliquer la rotation
             rotationX -= mouseY; // On inverse le Y pour un comportement naturel
-            rotationX = Mathf.Clamp(rotationX, -limiteVerticale, limiteVerticale); // Limite verticale pour éviter une rotation complète
+            rotationX = Mathf.Clamp(rotationX, -limiteVerticale, limiteVerticale);
 
             transform.localEulerAngles = new Vector3(rotationX, transform.localEulerAngles.y + mouseX, 0);
         }
